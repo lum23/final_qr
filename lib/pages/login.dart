@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:final_qr/components/field.dart';
-
+import 'package:final_qr/components/button.dart';
 class LoginPage extends StatelessWidget{
   LoginPage({super.key});
 
   final userCont = TextEditingController();
   final passCont = TextEditingController();
   
+  void signIn(){
+    print("LOGINNNN");
+  }
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -26,10 +29,12 @@ class LoginPage extends StatelessWidget{
                   Color(0xff31ca52),
                 ]
               )
+              // color: Color.fromRGBO(241, 241, 241, 1)
             ),
             child: Column(
               children: <Widget>[
                 const SizedBox(height: 100),
+                
                 const Image
                 (
                   image: AssetImage('assets/ndmu.png'),
@@ -49,7 +54,9 @@ class LoginPage extends StatelessWidget{
                     color: Colors.black87,
                   ),
                 ),
+
                 const SizedBox(height: 40),
+
                 FieldLogin(
                   controller: passCont, 
                   hintText: 'Password', 
@@ -58,6 +65,12 @@ class LoginPage extends StatelessWidget{
                     Icons.lock,
                     color: Colors.black87,
                   ),
+                ),
+
+                const SizedBox(height: 40),
+
+                Button(
+                  onTap: signIn,
                 ),
               ],
             ),

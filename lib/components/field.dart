@@ -20,7 +20,7 @@ class FieldLogin extends StatefulWidget {
 }
 
 class _FieldLoginState extends State<FieldLogin> {
-  bool x = false;
+  bool x = true;
   Widget visible = const Icon(Icons.visibility,color: Colors.black87);
   void obsc(){
     x = widget.obscureText;
@@ -29,12 +29,12 @@ class _FieldLoginState extends State<FieldLogin> {
   void toggleVisibility(){
     if (x == true){
       setState(() {
-        visible = const Icon(Icons.visibility_off,color: Colors.black87);
+        visible = const Icon(Icons.visibility,color: Colors.black87);
       });
     }
     else{
       setState(() {
-        visible = const Icon(Icons.visibility,color: Colors.black87);
+        visible = const Icon(Icons.visibility_off,color: Colors.black87);
       });
     }
   }

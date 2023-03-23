@@ -31,48 +31,51 @@ class LoginPage extends StatelessWidget{
               )
               // color: Color.fromRGBO(241, 241, 241, 1)
             ),
-            child: Column(
-              children: <Widget>[
-                const SizedBox(height: 100),
-                
-                const Image
-                (
-                  image: AssetImage('assets/ndmu.png'),
-                  alignment: Alignment.center,
-                  fit: BoxFit.fitHeight,
-                  height: 200,
-                ),
-
-                const SizedBox(height: 70),
-                
-                FieldLogin( // USERNAME
-                  controller: userCont, 
-                  hintText: 'Username', 
-                  obscureText: false,
-                  prefixIcon: const Icon(
-                    Icons.person,
-                    color: Colors.black87,
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                children: <Widget>[
+                  const SizedBox(height: 100),
+                  
+                  const Image
+                  (
+                    image: AssetImage('assets/ndmu.png'),
+                    alignment: Alignment.center,
+                    fit: BoxFit.fitHeight,
+                    height: 200,
                   ),
-                ),
-
-                const SizedBox(height: 40),
-
-                FieldLogin(
-                  controller: passCont, 
-                  hintText: 'Password', 
-                  obscureText: true,
-                  prefixIcon: const Icon(
-                    Icons.lock,
-                    color: Colors.black87,
+            
+                  const SizedBox(height: 70),
+                  
+                  FieldLogin( // USERNAME
+                    controller: userCont, 
+                    hintText: 'Username', 
+                    obscureText: false,
+                    prefixIcon: const Icon(
+                      Icons.person,
+                      color: Colors.black87,
+                    ),
                   ),
-                ),
-
-                const SizedBox(height: 40),
-
-                Button(
-                  onTap: signIn,
-                ),
-              ],
+            
+                  const SizedBox(height: 40),
+            
+                  FieldLogin(
+                    controller: passCont, 
+                    hintText: 'Password', 
+                    obscureText: true,
+                    prefixIcon: const Icon(
+                      Icons.lock,
+                      color: Colors.black87,
+                    ),
+                  ),
+            
+                  const SizedBox(height: 40),
+            
+                  Button(
+                    onTap: signIn,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
